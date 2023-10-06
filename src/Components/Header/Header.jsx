@@ -35,7 +35,7 @@ const Header = () => {
           </div>
           </div>
           </div>
-          <div className="max-w-7xl mx-auto px-4 min-h-[68vh]">
+          <div className="min-h-[68vh] lg:px-4">
           <Outlet></Outlet>
           </div>
           <Footer></Footer>
