@@ -1,18 +1,19 @@
 import { NavLink, Outlet } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 
 const Header = () => {
 
           const links = <>
-          <li><NavLink to="/">Statistics</NavLink></li>
-          <li><NavLink to="/applied">Applied Jobs</NavLink></li>
-          <li><NavLink to="/blogs">Blogs</NavLink></li>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/service">Services</NavLink></li>
+          <li><NavLink to="/about">About Us</NavLink></li>
           </>
 
           return (
           <div >
-
-          <div className="navbar bg-base-200 max-w-7xl mx-auto">
+          <div className="bg-base-200">
+          <div className="navbar  max-w-7xl mx-auto">
           <div className="navbar-start">
           <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,9 +34,11 @@ const Header = () => {
           <a className="btn">Login</a>
           </div>
           </div>
-          <div className="max-w-7xl mx-auto px-4">
+          </div>
+          <div className="max-w-7xl mx-auto px-4 min-h-[68vh]">
           <Outlet></Outlet>
           </div>
+          <Footer></Footer>
           </div>
           );
 };
