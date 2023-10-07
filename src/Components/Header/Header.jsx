@@ -12,8 +12,8 @@ const Header = () => {
 
           return (
           <div >
-          <div className="bg-base-200">
-          <div className="navbar  max-w-7xl mx-auto">
+          <div className="bg-base-200 sticky">
+          <div className="navbar  max-w-7xl mx-auto ">
           <div className="navbar-start">
           <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const Header = () => {
           {links}
           </ul>
           </div>
-          <a className="btn">Login</a>
+          <a className="btn bg-teal-400 text-black">Book Now</a>
           </div>
           </div>
           </div>
