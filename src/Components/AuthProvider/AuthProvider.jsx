@@ -1,12 +1,12 @@
 import { createContext } from "react";
 import PropTypes from 'prop-types';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from "firebase/auth";
 import app from "../Firebase/firebase.config";
 
 
 
-          //Created ContexApi - Fob Objerving user behaivior
-          const WholewebsiteContex = createContext(null)
+          //Created ContexApi - For Objerving user behaivior
+       export  const WholewebsiteContex = createContext(null)
           const auth = getAuth(app)
           
           
@@ -23,6 +23,8 @@ import app from "../Firebase/firebase.config";
           const SignOut = () => {
           signOut(auth)
           }
+
+          
 
           const userinformation = {
                     CreateUser,
