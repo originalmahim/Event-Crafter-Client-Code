@@ -1,9 +1,11 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import { useContext } from "react";
+import { WholewebsiteContex } from "../AuthProvider/AuthProvider";
 
 
 const Header = () => {
-
+         const {user} = useContext(WholewebsiteContex)
           const links = <>
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/service">Services</NavLink></li>
@@ -30,8 +32,11 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">
           {links}
           </ul>
-          </div>
-          <a className="btn bg-teal-400 text-black">Book Now</a>
+          </div> 
+          { user ? <button className="btn bg-teal-400 text-black" >Log Out</button> :
+          <Link to = "/booking" className="btn bg-teal-400 text-black">Book Now</Link>
+          }
+          
           </div>
           </div>
           </div>

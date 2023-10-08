@@ -10,6 +10,7 @@ import AuthProvider from './Components/AuthProvider/AuthProvider';
 import Home from './Components/Home/Home';
 import Header from './Components/Header/Header';
 import Signup from './SignUp/SignUp';
+import Login from './Components/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Signup></Signup>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
       }
     ]
   },
