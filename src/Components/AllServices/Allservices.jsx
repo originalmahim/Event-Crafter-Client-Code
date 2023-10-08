@@ -29,7 +29,7 @@ const Allservices = () => {
           <a href={service.link}>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{service.title}</h5>
           </a>
-          <p className="mt-3 font-normal text-white ">{service.shortDescription}</p>
+          <p className="mt-3 font-normal text-white ">{service.detailsTitle}</p>
           <h1 className="mb-1 text-xl text-white ">price : {service.price}</h1>
           <Link
                   to = {`/services/details/${service.id}`}
