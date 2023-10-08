@@ -31,12 +31,12 @@ const Login = () => {
 
 
           return (
-          <div className="antialiased bg-gradient-to-br from-green-100 to-white">
+          <div className="">
           <div className="max-w-7xl lg:px-52  mx-auto">
           <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
 
           <div className="w-full md:w-full lg:w-9/12 mx-auto md:mx-0">
-          <div className="bg-white p-10 flex flex-col w-full shadow-xl rounded-xl">
+          <div className="bg-white p-10 flex flex-col w-full shadow-lg rounded-xl border-2">
           <h2 className="text-2xl font-bold text-gray-800 text-left mb-5">
           Sign In
           </h2>
@@ -68,7 +68,7 @@ const Login = () => {
           <div id="button" className="flex flex-col w-full my-5">
           <button
           type="submit"
-          className="w-full py-4 bg-green-600 rounded-lg text-green-100"
+          className="w-full py-4 bg-[#1c6e5f] rounded-lg text-green-100"
           >
           <div className="flex flex-row items-center justify-center">
           <div className="mr-2">

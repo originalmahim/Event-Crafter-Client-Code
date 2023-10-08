@@ -6,13 +6,17 @@ import { WholewebsiteContex } from "../AuthProvider/AuthProvider";
 
 
 const Header = () => {
-         const {user, logOut} = useContext(WholewebsiteContex)
+         const {user, logOut,spinner} = useContext(WholewebsiteContex)
           const links = <>
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/services">Services</NavLink></li>
           <li><NavLink to="/about">About Us</NavLink></li>
           </>
-
+          if (spinner) {
+          return (
+          <div className="flex lg:mt-96 justify-center items-center">
+          <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400 text-center"></div>
+          </div>)}
 
           return (
           <div >
@@ -27,22 +31,41 @@ const Header = () => {
           {links}
           </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <h1 className="flex gap-2 items-center text-xl font-bold"><svg
+              className="w-8 text-[#1c6e5f]"
+              viewBox="0 0 24 24"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              stroke="currentColor"
+              fill="none"
+            >
+              <rect x="3" y="1" width="7" height="12" />
+              <rect x="3" y="17" width="7" height="6" />
+              <rect x="14" y="1" width="7" height="6" />
+              <rect x="14" y="11" width="7" height="12" />
+            </svg> Event Crafter</h1>
           </div>
-          <div className="navbar-end">
+          <div className="navbar-end items-center justify-center">
           <div className="hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
           {links}
           </ul>
-          </div> 
-          { user ? <button onClick={() => logOut()} className="btn bg-teal-400 text-black" >Log Out</button> :
-          <Link to = "/booking" className="btn bg-teal-400 text-black">Book Now</Link>
+          </div > 
+          <div className="hidden lg:flex">
+          {
+            user && <p className="mr-2">{user.email}</p>
+          }
+          </div>
+          { user ? <button onClick={() => logOut()} className="btn bg-[#1c6e5f] text-white" >Log Out</button> :
+          <Link to = "/booking" className="btn bg-[#1c6e5f] text-white">Book Now</Link>
           }
           
           </div>
           </div>
           </div>
-          <div className="min-h-[68vh] lg:px-4">
+          <div className="min-h-[68vh] ">
           <Outlet></Outlet>
           </div>
           <Footer></Footer>
