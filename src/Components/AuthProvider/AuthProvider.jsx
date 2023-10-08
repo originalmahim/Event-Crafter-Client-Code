@@ -24,7 +24,7 @@ import app from "../Firebase/firebase.config";
           return signInWithEmailAndPassword(auth,email,password)
           }
 
-          const SignOut = () => {
+          const logOut = () => {
                setSpinner(true)
           return signOut(auth)
           }
@@ -43,7 +43,7 @@ import app from "../Firebase/firebase.config";
           const userinformation = {
                     CreateUser,
                     Login,
-                    SignOut,
+                    logOut,
                     user,
                     spinner
           }

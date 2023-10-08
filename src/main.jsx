@@ -11,6 +11,10 @@ import Home from './Components/Home/Home';
 import Header from './Components/Header/Header';
 import Signup from './SignUp/SignUp';
 import Login from './Components/Login/Login';
+import Booking from './Components/Booking/booking';
+import PrivateRaute from './Components/PrivateRaute/PrivateRaute';
+import Services from './Services/Services';
+import Allservices from './Components/AllServices/Allservices';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +32,15 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>
+      },
+      {
+        path: "/booking",
+        element: <PrivateRaute><Booking></Booking></PrivateRaute> 
+
+      },
+      {
+        path: "/services",
+        element: <PrivateRaute><Allservices></Allservices></PrivateRaute> 
       }
     ]
   },

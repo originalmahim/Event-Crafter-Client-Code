@@ -4,13 +4,15 @@ import { useContext } from "react";
 import { WholewebsiteContex } from "../AuthProvider/AuthProvider";
 
 
+
 const Header = () => {
-         const {user} = useContext(WholewebsiteContex)
+         const {user, logOut} = useContext(WholewebsiteContex)
           const links = <>
           <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/service">Services</NavLink></li>
+          <li><NavLink to="/services">Services</NavLink></li>
           <li><NavLink to="/about">About Us</NavLink></li>
           </>
+
 
           return (
           <div >
@@ -33,7 +35,7 @@ const Header = () => {
           {links}
           </ul>
           </div> 
-          { user ? <button className="btn bg-teal-400 text-black" >Log Out</button> :
+          { user ? <button onClick={() => logOut()} className="btn bg-teal-400 text-black" >Log Out</button> :
           <Link to = "/booking" className="btn bg-teal-400 text-black">Book Now</Link>
           }
           
