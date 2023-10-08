@@ -30,9 +30,10 @@ const Services = () => {
                 <a href={service.link}>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{service.title}</h5>
                 </a>
-                <p className="mb-3 font-normal text-white ">{service.shortDescription}</p>
-                <a
-                  href={service.link}
+                <p className="mt-1 font-normal text-white ">{service.shortDescription}</p>
+                <h1 className="mb-1 text-xl text-white ">price : {service.price}</h1>
+                <Link
+                  to = {`/services/details/${service.id}`}
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-white rounded-lg "
                 >
                   Read more
@@ -51,7 +52,7 @@ const Services = () => {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

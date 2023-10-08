@@ -1,17 +1,31 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { WholewebsiteContex } from "../AuthProvider/AuthProvider";
-
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import app from "../Firebase/firebase.config";
 
 
 const Login = () => {
-          const [success,setSuccess] = useState('')
-          const [error,setError] = useState('')
-          const location = useLocation()
-            console.log(location);
-          const navigate = useNavigate()
-          const {Login} = useContext(WholewebsiteContex)
-
+  const [success,setSuccess] = useState('')
+  const [error,setError] = useState('')
+  const location = useLocation()
+  console.log(location);
+  const navigate = useNavigate()
+  const {Login} = useContext(WholewebsiteContex)
+  
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+   
+  const handleGoogleSignin = () => {
+    signInWithPopup(auth,provider)
+    .then(result => {
+      setSuccess('successfully loged in with', result.user.email)
+      navigate(location?.state ? location.state : '/')
+    })
+    .catch(error => {
+      setError(error.message);
+    })
+  }
           const handleSubmit = e => {
             e.preventDefault()
             const email = e.target.email.value;
@@ -110,7 +124,7 @@ const Login = () => {
           </div>
           <div className="text-center">
            <h1 className="text-black">or continue with</h1>
-            <button className="my-4 btn bg-emerald-600 text-white border-none">Google</button>
+            <button onClick={handleGoogleSignin} className="my-4 btn bg-emerald-600 text-white border-none">Google</button>
           </div>
           </div>
           </div>

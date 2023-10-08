@@ -21,9 +21,9 @@ const Pricing = () => {
           <span className="block text-2xl font-semibold">Wedding Package</span>
           <span>
           <span className="font-medium text-gray-500 text-xl align-top">$&thinsp;</span>
-          <span className="text-3xl font-bold">499 </span>
+          <span className="text-3xl font-bold">10000</span>
           </span>
-          <span className="text-gray-500 font-medium">/ event</span>
+          <span className="text-gray-500 font-medium">/ Basic</span>
           </div>
           </div>
           <ul className="mb-7 font-medium text-gray-500">
@@ -53,9 +53,9 @@ const Pricing = () => {
           <span className="block text-3xl font-semibold text-white">Birthday Package</span>
           <span>
           <span className="font-medium text-xl align-top">$&thinsp;</span>
-          <span className="text-3xl font-bold text-white">349 </span>
+          <span className="text-3xl font-bold text-white">2000 </span>
           </span>
-          <span className="font-medium">/ event</span>
+          <span className="font-medium">/ Basic</span>
           </div>
           </div>
           <ul className="mb-10 font-medium text-xl">
@@ -99,9 +99,9 @@ const Pricing = () => {
           <span className="block text-2xl font-semibold">Family Gatherings</span>
           <span>
           <span className="font-medium text-gray-500 text-xl align-top">$&thinsp;</span>
-          <span className="text-3xl font-bold">299 </span>
+          <span className="text-3xl font-bold">5000 </span>
           </span>
-          <span className="text-gray-500 font-medium">/ event</span>
+          <span className="text-gray-500 font-medium">/ Basic</span>
           </div>
           </div>
           <ul className="mb-7 font-medium text-gray-500">

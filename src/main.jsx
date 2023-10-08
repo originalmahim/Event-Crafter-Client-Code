@@ -14,6 +14,7 @@ import Login from './Components/Login/Login';
 import Booking from './Components/Booking/booking';
 import PrivateRaute from './Components/PrivateRaute/PrivateRaute';
 import Allservices from './Components/AllServices/Allservices';
+import Details from './Components/Details/Details';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <PrivateRaute><Allservices></Allservices></PrivateRaute> 
+      },
+      {
+        path: "/services/details/:id",
+        element: <Details></Details>
       }
     ]
   },
