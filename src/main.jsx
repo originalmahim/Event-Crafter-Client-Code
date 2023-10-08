@@ -13,7 +13,6 @@ import Signup from './SignUp/SignUp';
 import Login from './Components/Login/Login';
 import Booking from './Components/Booking/booking';
 import PrivateRaute from './Components/PrivateRaute/PrivateRaute';
-import Services from './Services/Services';
 import Allservices from './Components/AllServices/Allservices';
 
 const router = createBrowserRouter([
