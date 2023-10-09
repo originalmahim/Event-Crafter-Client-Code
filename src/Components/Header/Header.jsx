@@ -43,7 +43,7 @@ const Header = () => {
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
           {links}
           {
-            user ? <button onClick={handleLogOut} className=" bg-[#1c6e5f] rounded-md text-white" >Log Out</button> : <Link to = "/login" className=" p-1 rounded-md bg-[#1c6e5f] text-white">LogIn</Link>
+            user ? <button onClick={handleLogOut} className=" bg-[#1c6e5f] rounded-md text-white" >Log Out</button> : <Link to = "/login" className=" p-1 rounded-md  text-white">LogIn</Link>
           }
           </ul>
           </div>

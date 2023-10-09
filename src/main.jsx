@@ -16,6 +16,7 @@ import Booking from './Components/Booking/Booking';
 import Allservices from './Components/AllServices/Allservices';
 import Details from './Components/Details/Details';
 import Login from './Components/Login/Login';
+import About from './Components/About/About';
 
 
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         path: "/services/details/:id",
         element: <PrivateRaute><Details></Details></PrivateRaute> ,
         loader: () => fetch('/services.json')
+      },
+      {
+        path: "/about",
+        element: <PrivateRaute><About></About></PrivateRaute>
       }
     ]
   },
