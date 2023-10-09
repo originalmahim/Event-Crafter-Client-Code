@@ -11,6 +11,9 @@ const Header = () => {
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/services">Services</NavLink></li>
           <li><NavLink to="/about">About Us</NavLink></li>
+          {
+            user ? '' : <li><NavLink to="/booking">Booking</NavLink></li>
+          }
           </>
           if (spinner) {
           return (

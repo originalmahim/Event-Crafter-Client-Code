@@ -15,11 +15,13 @@ import Booking from './Components/Booking/booking';
 import PrivateRaute from './Components/PrivateRaute/PrivateRaute';
 import Allservices from './Components/AllServices/Allservices';
 import Details from './Components/Details/Details';
+import Errorinfos from './Errorinfos/Errorinfos';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Header></Header>,
+    errorElement: <Errorinfos></Errorinfos>,
     children: [
       {
         path: "/",
