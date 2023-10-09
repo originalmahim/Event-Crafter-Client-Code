@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { WholewebsiteContex } from "../AuthProvider/AuthProvider";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import app from "../Firebase/firebase.config";
-
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const [success,setSuccess] = useState('')
@@ -19,6 +19,11 @@ const Login = () => {
   const handleGoogleSignin = () => {
     signInWithPopup(auth,provider)
     .then(result => {
+      Swal.fire(
+        'Loged In',
+        'You have loged in successfully',
+        'success'
+      )
       setSuccess('successfully loged in with', result.user.email)
       navigate(location?.state ? location.state : '/')
     })
@@ -34,6 +39,11 @@ const Login = () => {
             setError('')
             Login(email,password)
             .then(result => {
+              Swal.fire(
+                'Loged In',
+                'You have loged in successfully',
+                'success'
+              )
               setSuccess('Loged In Successfully')
               navigate(location?.state ? location.state : '/')
               })

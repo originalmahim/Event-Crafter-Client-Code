@@ -2,7 +2,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useContext } from "react";
 import { WholewebsiteContex } from "../AuthProvider/AuthProvider";
-
+import Swal from 'sweetalert2'
 
 
 const Header = () => {
@@ -15,6 +15,16 @@ const Header = () => {
             user ? '' : <li><NavLink to="/booking">Booking</NavLink></li>
           }
           </>
+          const handleLogOut = () => {
+            logOut()
+            .then(result => {
+              Swal.fire(
+                'Loged Out',
+                'You have loged Out successfully',
+                'success'
+              )
+            })
+          }
           if (spinner) {
           return (
           <div className="flex lg:mt-96 justify-center items-center">
@@ -33,7 +43,7 @@ const Header = () => {
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
           {links}
           {
-            user ? <button onClick={() => logOut()} className=" bg-[#1c6e5f] rounded-md text-white" >Log Out</button> : <Link to = "/login" className=" p-1 rounded-md bg-[#1c6e5f] text-white">LogIn</Link>
+            user ? <button onClick={handleLogOut} className=" bg-[#1c6e5f] rounded-md text-white" >Log Out</button> : <Link to = "/login" className=" p-1 rounded-md bg-[#1c6e5f] text-white">LogIn</Link>
           }
           </ul>
           </div>
@@ -76,7 +86,7 @@ const Header = () => {
           </div>
           <div className="hidden lg:flex">
            { user ? 
-          <button onClick={() => logOut()} className=" bg-[#1c6e5f] text-white btn " >Log Out</button> :
+          <button onClick={handleLogOut} className=" bg-[#1c6e5f] text-white btn " >Log Out</button> :
           <Link to = "/login" className="btn bg-[#1c6e5f] text-white">LogIn</Link>
              }
           </div>
