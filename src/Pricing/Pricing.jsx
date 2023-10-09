@@ -13,8 +13,8 @@ const Pricing = () => {
           </p>
           </div>
 
-          <div className="flex flex-col justify-between items-center lg:flex-row lg:items-start">
-          <div className="w-full flex-1 mt-8 p-8 order-2 bg-white shadow-xl rounded-3xl sm:w-96 lg:w-full lg:order-1 lg:rounded-r-none">
+          <div className="flex flex-col justify-between items-center lg:flex-row lg:items-start md:flex-row md:items-start">
+          <div className="w-full flex-1 mt-8 p-8 order-2 bg-white shadow-xl rounded-3xl sm:w-96 lg:w-full md:order-1 lg:order-1 lg:rounded-r-none md:rounded-r-none ">
           <div className="mb-7 pb-7 flex items-center border-b border-gray-300">
           
           <div className="ml-5">

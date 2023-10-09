@@ -9,7 +9,7 @@ const TeamSection = () => {
         Event Experts
       </p>
     </div>
-    <h2 className="max-w-lg mb-6  text-4xl font-semibold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+    <h2 className="max-w-lg mb-6 lg:text-5xl  text-4xl font-semibold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
       <span className="relative inline-block">
         <svg
           viewBox="0 0 52 24"
@@ -34,9 +34,9 @@ const TeamSection = () => {
           />
         </svg>
       </span>{' '}
-      our talented team of event planners
+      Our Talented Team Of Event Planners
     </h2>
-    <p className="text-base text-gray-700 md:text-lg">
+    <p className="text-xl text-black">
       We specialize in creating memorable and unique social events for our clients.
     </p>
   </div>

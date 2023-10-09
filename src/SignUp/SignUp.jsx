@@ -8,46 +8,46 @@ import { updateProfile } from "firebase/auth";
 
 
 const SignUp = () => {
-    const {CreateUser} = useContext(WholewebsiteContex)
-          
-            const [registerError,setRegisterError] = useState('')
-            const [success,setSuccess] = useState('')
-          const [showPassword, setShowPassword] = useState(false);
-          
-          const handlesignupformSubmit = e => {
-                    e.preventDefault()
-                    const email = e.target.email.value;
-                    const password = e.target.password.value;
-                  const confirmPassword = e.target.confirm.value;
-                   const name = e.target.name.value;
-                   const url = e.target.photoUrl.value;
-                    setRegisterError('')
-                    setSuccess('')
+        const {CreateUser} = useContext(WholewebsiteContex)
+
+        const [registerError,setRegisterError] = useState('')
+        const [success,setSuccess] = useState('')
+        const [showPassword, setShowPassword] = useState(false);
+
+        const handlesignupformSubmit = e => {
+        e.preventDefault()
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const confirmPassword = e.target.confirm.value;
+        const name = e.target.name.value;
+        const url = e.target.photoUrl.value;
+        setRegisterError('')
+        setSuccess('')
 
 
-                    if (!/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(password)) {
-                     return setRegisterError('password should be as long as the password contains the number and special character')    
-                    }
+        if (!/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(password)) {
+        return setRegisterError('password should be as long as the password contains the number and special character')    
+        }
 
-                    if (password != confirmPassword) {
-                       return setRegisterError('Password And Confirm Password Should be Same') 
-                    }
+        if (password != confirmPassword) {
+        return setRegisterError('Password And Confirm Password Should be Same') 
+        }
 
-                    CreateUser(email,password)
-                    .then(result => {
-                      console.log(result.user);
-                      updateProfile(result.user,{
-                        displayName: name,
-                        photoURL: url,
-                 })
-                     setSuccess('Account Created Successfully')
+        CreateUser(email,password)
+        .then(result => {
+        console.log(result.user);
+        updateProfile(result.user,{
+        displayName: name,
+        photoURL: url,
+        })
+        setSuccess('Account Created Successfully')
 
-                     })
-                    .catch(error => {
-                     setRegisterError(error.message);
-                     })
-          
-          }
+        })
+        .catch(error => {
+        setRegisterError(error.message);
+        })
+
+        }
 
           return (
           <section className="max-w-7xl mx-auto font-poppins text-xl mb-6 ">
