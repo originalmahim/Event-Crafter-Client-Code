@@ -1,6 +1,5 @@
 
  import { FaFacebook, FaGithub, FaTwitter } from 'react-icons/fa'; 
-// Import the icons you want to use from react-icons library
 
 function Footer() {
   return (
@@ -92,7 +91,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div>
+          <div className='hidden lg:grid md:grid'>
             <p className="font-semibold tracking-wide text-teal-accent-400">
               Cherry
             </p>
@@ -139,7 +138,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div>
+          <div className='hidden lg:grid md:grid' >
             <p className="font-semibold tracking-wide text-teal-accent-400">
               Apples
             </p>
@@ -186,7 +185,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div>
+          <div >
             <p className="font-semibold tracking-wide text-teal-accent-400">
               Business
             </p>

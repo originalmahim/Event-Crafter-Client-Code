@@ -20,7 +20,7 @@ const Header = () => {
 
           return (
           <div >
-          <div className="bg-base-200 sticky">
+          <div className="bg-base-200 ">
           <div className="navbar  max-w-7xl mx-auto ">
           <div className="navbar-start">
           <div className="dropdown">
@@ -29,9 +29,12 @@ const Header = () => {
           </label>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
           {links}
+          {
+            user ? <button onClick={() => logOut()} className=" bg-[#1c6e5f] rounded-md text-white" >Log Out</button> : <Link to = "/login" className=" p-1 rounded-md bg-[#1c6e5f] text-white">LogIn</Link>
+          }
           </ul>
           </div>
-          <h1 className="flex gap-2 items-center text-xl font-bold"><svg
+          <h1 className="flex gap-2 items-center lg:text-xl lg:font-bold font-medium"><svg
               className="w-8 text-[#1c6e5f]"
               viewBox="0 0 24 24"
               strokeLinejoin="round"
@@ -53,14 +56,27 @@ const Header = () => {
           {links}
           </ul>
           </div > 
-          <div className="hidden lg:flex">
+          <div className="">
           {
-            user && <p className="mr-2">{user.email}</p>
+            user &&  <div className="dropdown dropdown-end">
+            <div className="flex items-center gap-1">
+                <p className="flex">{user.displayName}</p>
+            <label tabIndex={0} className="btn bg-green-400 btn-circle avatar ">
+              <div className="w-10 rounded-full">
+                <img src={user.photoURL} />
+              </div>
+            </label>
+
+              </div>
+          </div>
           }
           </div>
-          { user ? <button onClick={() => logOut()} className="btn bg-[#1c6e5f] text-white" >Log Out</button> :
-          <Link to = "/booking" className="btn bg-[#1c6e5f] text-white">Book Now</Link>
-          }
+          <div className="hidden lg:flex">
+           { user ? 
+          <button onClick={() => logOut()} className=" bg-[#1c6e5f] text-white btn " >Log Out</button> :
+          <Link to = "/login" className="btn bg-[#1c6e5f] text-white">LogIn</Link>
+             }
+          </div>
           
           </div>
           </div>
