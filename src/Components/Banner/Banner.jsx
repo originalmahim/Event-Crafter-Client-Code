@@ -17,7 +17,7 @@ const Banner = () => {
             backgroundPosition: 'center',
             }}
             >
-            <div className="text-white lg:ml-44 md:ml-6 lg:mt-60 md:mt-20 p-20 lg:p-0">
+            <div data-aos="fade-right" className="text-white lg:ml-44 md:ml-6 lg:mt-60 md:mt-20 p-20 lg:p-0">
             <h1 className=" lg:font-bold lg:text-7xl md:text-4xl text-xl ">Making Special <br /> Memories For Your <br /> Wedding</h1>
             <p className="my-4 text-xl hidden lg:flex">Crafting unforgettable moments to capture the essence of your love story <br /> and curating a unique, cherished experience for you and your guests, <br /> ensuring your big day is a lasting memory filled with love and joy.</p>
             { user ? <Link to = "/booking">

@@ -29,15 +29,15 @@ const Allservices = () => {
             </div>
             </div>
             </div>
-            <h1 className="lg:text-5xl md:text-2xl text-xl text-center font-semibold my-2">Our Services</h1>
+            <h1 data-aos="zoom-out-up" className="lg:text-5xl md:text-2xl text-xl text-center font-semibold my-2">Our Services</h1>
             </div>
             <div className="max-w-7xl mx-auto">
-            <h1 className="lg:text-5xl md:text-2xl text-xl text-center font-semibold">
+            <h1 data-aos="zoom-out-up" className="lg:text-5xl md:text-2xl text-xl text-center font-semibold">
             Choose Your Favourite Plan
             </h1>
             <div className="grid px-3 lg:grid-cols-4 md:grid-cols-2  gap-6 my-14">
             {allservices.map((service, index) => (
-            <div key={index} className="max-w-sm bg-[#1c6e5f] border  rounded-lg shadow ">
+            <div data-aos="flip-right" key={index} className="max-w-sm bg-[#1c6e5f] border  rounded-lg shadow ">
             <a href={service.link}>
             <img className="w-full rounded-t-lg h-[280px]" src={service.imageSrc} alt="" />
             </a>

@@ -17,13 +17,13 @@ const Services = () => {
       <div className="my-8">
 
       <div className="max-w-7xl mx-auto">
-      <h1 className="lg:text-5xl md:text-2xl text-xl text-center font-bold">
+      <h1 data-aos="zoom-out-up" className="lg:text-5xl md:text-2xl text-xl text-center font-bold">
       We’ll make your next celebration <br />
       very special!
       </h1>
       <div className="grid px-3 lg:grid-cols-3 md:grid-cols-2  gap-6 my-14">
       {allservices.slice(0,showall).map((service, index) => (
-      <div key={index} className="max-w-sm bg-[#1c6e5f] border  rounded-lg shadow ">
+      <div data-aos="flip-left" key={index} className="max-w-sm bg-[#1c6e5f] border  rounded-lg shadow ">
       <a href={service.link}>
       <img className="w-full rounded-t-lg h-[280px]" src={service.imageSrc} alt="" />
       </a>

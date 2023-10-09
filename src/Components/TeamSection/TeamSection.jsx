@@ -4,12 +4,12 @@ const TeamSection = () => {
           return (
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-            <div>
+            <div data-aos="zoom-out-up">
             <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
             Event Experts
             </p>
             </div>
-            <h2 className="max-w-lg mb-6 lg:text-5xl  text-4xl font-semibold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+            <h2 data-aos="zoom-out-up" className="max-w-lg mb-6 lg:text-5xl  text-4xl font-semibold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
             <span className="relative inline-block">
             <svg
             viewBox="0 0 52 24"
@@ -36,12 +36,12 @@ const TeamSection = () => {
             </span>{' '}
             Our Talented Team Of Event Planners
             </h2>
-            <p className="text-xl text-black">
+            <p data-aos="zoom-out-up" className="text-xl text-black">
             We specialize in creating memorable and unique social events for our clients.
             </p>
             </div>
-            <div className="grid gap-10 row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3">
-            <div className="flex">
+            <div data-aos="fade-right" className="grid gap-10 row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3">
+            <div  className="flex">
             <img
             className="object-cover w-20 h-20 mr-4 rounded-full shadow"
             src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"

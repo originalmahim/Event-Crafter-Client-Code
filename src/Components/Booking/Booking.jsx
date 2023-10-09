@@ -18,11 +18,11 @@ const Booking = () => {
           <div className="grid
           lg:grid-cols-4  gap-6 items-center justify-center my-20">
           <div className="text-xl col-span-2">
-          <div>
+          <div data-aos="fade-right">
           <img className="rounded-lg" src="https://i.ibb.co/2ccTxGf/Screenshot-2023-10-08-141813.png"  />
           </div>
           </div>
-          <div className=" col-span-2 lg:p-14 my-10">
+          <div data-aos="fade-left" className=" col-span-2 lg:p-14 my-10">
           <h1 className="lg:text-4xl mb-2 font-bold text-black ">We will give a very special <br /> celebration for you</h1>
           <form onSubmit={handlebooking}>
           <div className="mb-5">

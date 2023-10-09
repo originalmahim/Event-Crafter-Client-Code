@@ -46,7 +46,7 @@ const Reviews = () => {
   return (
       <section className="bg-white ">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
-      <div className="mx-auto max-w-screen-lg">
+      <div data-aos="zoom-out-up" className="mx-auto max-w-screen-lg">
       <h2 className="mb-4 text-5xl  font-semibold text-black">
       Event Success Stories
       </h2>
@@ -58,7 +58,7 @@ const Reviews = () => {
       <div className="mx-auto max-w-screen-lg px-5">
       <Slider {...settings}>
       {testimonials.map((testimonial, index) => (
-      <div key={index} className="bg-[#1c6e5f] p-6 rounded-lg shadow-lg ">
+      <div data-aos="zoom-out-up" key={index} className="bg-[#1c6e5f] p-6 rounded-lg shadow-lg ">
       <section className="my-8 text-black bg-white rounded-lg">
       <div className="container  flex flex-col items-center p-4 mx-auto space-y-6 md:p-8">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-16 h-16 ">

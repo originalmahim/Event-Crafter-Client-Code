@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Pricing = () => {
           return (
           <div className="max-w-6xl mx-auto pt-10 pb-36 px-8">
-          <div className="max-w-md mx-auto mb-14 text-center">
+          <div data-aos="zoom-out-up" className="max-w-md mx-auto mb-14 text-center">
           <h1 className="text-4xl font-semibold mb-6 lg:text-5xl">
           <span className="text-[#1c6e5f]">Flexible</span> Event Plans
           </h1>
@@ -14,7 +14,7 @@ const Pricing = () => {
           </div>
 
           <div className="flex flex-col justify-between items-center lg:flex-row lg:items-start md:flex-row md:items-start">
-          <div className="w-full flex-1 mt-8 p-8 order-2 bg-white shadow-xl rounded-3xl sm:w-96 lg:w-full md:order-1 lg:order-1 lg:rounded-r-none md:rounded-r-none ">
+          <div data-aos="fade-right" className="w-full flex-1 mt-8 p-8 order-2 bg-white shadow-xl rounded-3xl sm:w-96 lg:w-full md:order-1 lg:order-1 lg:rounded-r-none md:rounded-r-none ">
           <div className="mb-7 pb-7 flex items-center border-b border-gray-300">
           
           <div className="ml-5">
@@ -46,7 +46,7 @@ const Pricing = () => {
           </Link>
           </div>
 
-          <div className="w-full flex-1 p-8 order-1 shadow-xl rounded-3xl bg-[#1c6e5f] text-white sm:w-96 lg:w-full lg:order-2 lg:mt-0">
+          <div data-aos="zoom-out-up" className="w-full flex-1 p-8 order-1 shadow-xl rounded-3xl bg-[#1c6e5f] text-white sm:w-96 lg:w-full lg:order-2 lg:mt-0">
           <div className="mb-8 pb-8 flex items-center border-b border-gray-600">
           
           <div className="ml-5">
@@ -92,7 +92,7 @@ const Pricing = () => {
           </Link>
           </div>
 
-          <div className="w-full flex-1 mt-8 p-8 order-3 bg-white shadow-xl rounded-3xl sm:w-96 lg:w-full lg:order-3 lg:rounded-l-none">
+          <div data-aos="fade-left" className="w-full flex-1 mt-8 p-8 order-3 bg-white shadow-xl rounded-3xl sm:w-96 lg:w-full lg:order-3 lg:rounded-l-none">
           <div className="mb-7 pb-7 flex items-center border-b border-gray-300">
           
           <div className="ml-5">
