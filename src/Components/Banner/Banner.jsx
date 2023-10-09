@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { WholewebsiteContex } from "../Components/AuthProvider/AuthProvider";
+import { WholewebsiteContex } from './../AuthProvider/AuthProvider';
 
 
 const Banner = () => {

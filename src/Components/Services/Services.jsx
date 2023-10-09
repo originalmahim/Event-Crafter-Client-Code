@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { WholewebsiteContex } from "../Components/AuthProvider/AuthProvider";
+import { WholewebsiteContex } from './../AuthProvider/AuthProvider';
+
 
 const Services = () => {
   const [showall , setShowall] = useState(6)

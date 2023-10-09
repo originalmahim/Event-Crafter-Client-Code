@@ -7,15 +7,17 @@ import {
 } from "react-router-dom";
 import './index.css'
 import AuthProvider from './Components/AuthProvider/AuthProvider';
-import Home from './Components/Home/Home';
 import Header from './Components/Header/Header';
-import Signup from './SignUp/SignUp';
-import Login from './Components/Login/Login';
-import Booking from './Components/Booking/booking';
+import Errorinfos from './Components/Errorinfos/Errorinfos';
+import Home from './Components/Home/Home';
+import SignUp from './Components/SignUp/SignUp';
 import PrivateRaute from './Components/PrivateRaute/PrivateRaute';
+import Booking from './Components/Booking/Booking';
 import Allservices from './Components/AllServices/Allservices';
 import Details from './Components/Details/Details';
-import Errorinfos from './Errorinfos/Errorinfos';
+import Login from './Components/Login/Login';
+
+
 
 const router = createBrowserRouter([
   {
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/register",
-        element: <Signup></Signup>
+        element: <SignUp></SignUp>
       },
       {
         path: "/login",

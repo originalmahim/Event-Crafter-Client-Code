@@ -2,8 +2,9 @@
 import { Link } from "react-router-dom";
 import { AiFillEye,AiFillEyeInvisible } from 'react-icons/ai';
 import { useContext, useState } from "react";
-import { WholewebsiteContex } from "../Components/AuthProvider/AuthProvider";
+
 import { updateProfile } from "firebase/auth";
+import { WholewebsiteContex } from './../AuthProvider/AuthProvider';
 
 
 
