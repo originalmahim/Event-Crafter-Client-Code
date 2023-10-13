@@ -9,7 +9,6 @@ const Login = () => {
   const [success,setSuccess] = useState('')
   const [error,setError] = useState('')
   const location = useLocation()
-  console.log(location);
   const navigate = useNavigate()
   const {Login} = useContext(WholewebsiteContex)
   
@@ -24,6 +23,7 @@ const Login = () => {
         'You have loged in successfully',
         'success'
       )
+      
       setSuccess('successfully loged in with', result.user.email)
       navigate(location?.state ? location.state : '/')
     })

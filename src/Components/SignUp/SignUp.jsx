@@ -1,11 +1,12 @@
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiFillEye,AiFillEyeInvisible } from 'react-icons/ai';
 import { useContext, useState } from "react";
-
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 import { WholewebsiteContex } from './../AuthProvider/AuthProvider';
-
+import Swal from 'sweetalert2'
+import app from "../Firebase/firebase.config";
 
 
 const SignUp = () => {
@@ -14,6 +15,24 @@ const SignUp = () => {
         const [registerError,setRegisterError] = useState('')
         const [success,setSuccess] = useState('')
         const [showPassword, setShowPassword] = useState(false);
+
+        const location = useLocation()
+  const navigate = useNavigate()
+  
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+   
+  const handleGoogleSignup = () => {
+    signInWithPopup(auth,provider)
+    .then(result => {
+      Swal.fire(
+      'Account Created',
+      'You have Created Account successfully',
+        'success'
+      )
+      navigate(location?.state ? location.state : '/')
+    })
+}
 
         const handlesignupformSubmit = e => {
         e.preventDefault()
@@ -36,11 +55,16 @@ const SignUp = () => {
 
         CreateUser(email,password)
         .then(result => {
-        console.log(result.user);
-        updateProfile(result.user,{
-        displayName: name,
-        photoURL: url,
-        })
+              updateProfile(result.user,{
+                    displayName: name,
+                    photoURL: url,
+                  })
+                  Swal.fire(
+                        'Account Created',
+                        'You have Created Account successfully',
+                        'success'
+                      )
+            navigate(location?.state ? location.state : '/')
         setSuccess('Account Created Successfully')
 
         })
@@ -158,6 +182,9 @@ const SignUp = () => {
           success &&
           <p className="text-green-600">${success}</p>
           }
+          <div className="text-center">
+            <button onClick={handleGoogleSignup} className="btn bg-white text-blue-400">Sign Up with Google</button>
+          </div>
           </div>     
                 </div>
           </div>

@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 import Statics from "../StatisTics/Statics";
 import Banner from './../Banner/Banner';
 import Pricing from './../Pricing/Pricing';
