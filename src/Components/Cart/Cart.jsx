@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { WholewebsiteContex } from "../AuthProvider/AuthProvider";
 import useAxios from "../../Hooks/useAxios";
-
+import Swal from 'sweetalert2'
 const Cart = () => {
           const axiosSecure = useAxios()
           const { user } = useContext(WholewebsiteContex);
@@ -15,8 +15,31 @@ const Cart = () => {
    })
   }, [user.email, axiosSecure, url]);
 
-  const handleDelete = () => {
+  
 
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/cart/${user.email}/${_id}`)
+        .then(() => {
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        })
+        
+      }
+    })
+        
   }
 
   return (
@@ -30,13 +53,13 @@ const Cart = () => {
                   Status
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Category
+                  Event Category
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Price
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Product name
+                  Event name
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Actions
@@ -64,7 +87,7 @@ const Cart = () => {
                     {product.productName}
                   </td>
                   <td className="px-6 py-4">
-                    <button onClick={handleDelete}
+                    <button onClick={ () => handleDelete(product._id)}
                       className="text-red-500 hover:text-red-700"
                     >
                       Delete
