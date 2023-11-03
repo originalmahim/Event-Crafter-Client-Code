@@ -17,6 +17,7 @@ import Allservices from './Components/AllServices/Allservices';
 import Details from './Components/Details/Details';
 import Login from './Components/Login/Login';
 import About from './Components/About/About';
+import Cart from './Components/Cart/Cart';
 
 
 
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <PrivateRaute><About></About></PrivateRaute>
+      },
+      {
+        path: "/booking-Cart",
+        element: <PrivateRaute><Cart></Cart></PrivateRaute> 
       }
     ]
   },
