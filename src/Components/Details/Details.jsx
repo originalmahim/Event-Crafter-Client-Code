@@ -1,23 +1,30 @@
-import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from 'react';
 import { FaUsers, FaMoneyCheck, FaClipboardList, FaHeart } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
+import { WholewebsiteContex } from '../AuthProvider/AuthProvider';
+import useAxios from '../../Hooks/useAxios';
 
 const Details = () => {
           const details = useLoaderData()
-
+          const {user} = useContext(WholewebsiteContex)
+          const axiosSecure = useAxios()
           const handleBooking = () => {
             const productName = details.shortDescription;
             const productCatagory = details.title;
             const price = details.price;
-            const cart = {productCatagory,productName,price}
-            console.log(cart);
-            axios.post('http://localhost:5000/cart', cart)
-                  .then( (res) => {
-                    console.log(res);
+            const email = user.email;
+            const cart = {email,productCatagory,productName,price}
+            axiosSecure.post('/cart', cart)
+                  .then( () => {
+                    notify();
                   })
           }
 
-
+          const notify = () => toast.success("Lorem ipsum dolor", {
+                    position: toast.POSITION.TOP_CENTER
+                  });
           return (
           <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="aspect-w-16 aspect-h-7">
@@ -41,7 +48,8 @@ const Details = () => {
           We specialize in creating unforgettable experiences for weddings, anniversaries, baby showers, bridal showers, and family gatherings.
           </p>
           
-          <button onClick={handleBooking} className='btn mt-4 bg-[#1c6e5f] text-white'>Book Now</button>
+          <button onClick={handleBooking} className='btn mt-4 bg-[#1c6e5f] text-white hover:bg-[#1c6e5f]'>Book Now</button>
+          <ToastContainer />
           </div>
 
           <div className="lg:col-span-2">
