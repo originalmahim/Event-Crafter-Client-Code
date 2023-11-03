@@ -1,9 +1,23 @@
+import axios from 'axios';
 import { FaUsers, FaMoneyCheck, FaClipboardList, FaHeart } from 'react-icons/fa';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 const Details = () => {
           const details = useLoaderData()
-          console.log(details);
+
+          const handleBooking = () => {
+            const productName = details.shortDescription;
+            const productCatagory = details.title;
+            const price = details.price;
+            const cart = {productCatagory,productName,price}
+            console.log(cart);
+            axios.post('http://localhost:5000/cart', cart)
+                  .then( (res) => {
+                    console.log(res);
+                  })
+          }
+
+
           return (
           <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="aspect-w-16 aspect-h-7">
@@ -26,9 +40,8 @@ const Details = () => {
           <p className="mt-2 md:mt-4 text-black">
           We specialize in creating unforgettable experiences for weddings, anniversaries, baby showers, bridal showers, and family gatherings.
           </p>
-          <Link to = "/booking" >
-          <button className='btn mt-4 bg-[#1c6e5f] text-white'>Book Now</button>
-          </Link>
+          
+          <button onClick={handleBooking} className='btn mt-4 bg-[#1c6e5f] text-white'>Book Now</button>
           </div>
 
           <div className="lg:col-span-2">
