@@ -10,14 +10,15 @@ const Header = () => {
           const links = <>
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/services">Services</NavLink></li>
-          <li><NavLink to="/about">About Us</NavLink></li>
+          { user ? <li><NavLink to="/booking">My Bookings</NavLink></li> : <li><NavLink to="/about">About Us</NavLink></li>}
+          
           {
             user ? '' : <li><NavLink to="/booking">Booking</NavLink></li>
           }
           </>
           const handleLogOut = () => {
             logOut()
-            .then(result => {
+            .then(() => {
               Swal.fire(
                 'Loged Out',
                 'You have loged Out successfully',

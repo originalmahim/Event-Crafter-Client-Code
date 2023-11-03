@@ -1,26 +1,20 @@
 import { FaUsers, FaMoneyCheck, FaClipboardList, FaHeart } from 'react-icons/fa';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Details = () => {
-          const service = useLoaderData()
-          const {id} = useParams()
-          const idIntizer = parseInt(id)
-          const details = service.find(detail => detail.id == idIntizer)
-          console.log(details.shortDescription
-                    );
-          
+          const details = useLoaderData()
           return (
           <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="aspect-w-16 aspect-h-7">
-          <img className="w-full rounded-xl" src={details.thumbnailImageSrc} />
+          <img className="w-full rounded-xl" src={details?.thumbnailImageSrc} />
           </div>
           <div className='my-3'>
-          <h1 className='lg:text-3xl font-semibold'>{details.shortDescription}</h1>
-          <p className='text-xl px-2 my-2'>{details.description}</p>
+          <h1 className='lg:text-3xl font-semibold'>{details?.shortDescription}</h1>
+          <p className='text-xl px-2 my-2'>{details?.description}</p>
           </div>
           <div className='my-3'>
           <h1 className='lg:text-3xl font-semibold'>About This Service</h1>
-          <p className='text-xl px-2 my-2'>{details.ServiceDetails}</p>
+          <p className='text-xl px-2 my-2'>{details?.ServiceDetails}</p>
           </div>
 
           <div className="mt-5 lg:mt-16 grid lg:grid-cols-3 gap-8 lg:gap-12">

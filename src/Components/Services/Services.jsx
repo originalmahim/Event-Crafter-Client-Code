@@ -7,7 +7,7 @@ const Services = () => {
   const [showall , setShowall] = useState(6)
   const [allservices, setAllServies] = useState([]);
   useEffect(() => {
-    fetch('services.json')
+    fetch('http://localhost:5000/services')
     .then(res => res.json())
     .then(data => setAllServies(data))
   },[])
@@ -34,7 +34,7 @@ const Services = () => {
       <p className="mt-1 font-normal text-xl text-white ">{service.detailsTitle}</p>
       <h1 className="mb-1 text-xl text-white ">price : {service.price}</h1>
       <Link
-      to = {`/services/details/${service.id}`}
+      to = {`/details/${service._id}`}
       className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-white rounded-lg "
       >
       Read more
