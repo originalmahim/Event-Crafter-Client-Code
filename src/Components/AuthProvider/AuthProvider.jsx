@@ -2,6 +2,8 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged} from "firebase/auth";
 import app from "../Firebase/firebase.config";
+// import useAxios from './../../Hooks/useAxios';
+import axios from "axios";
 
 
 
@@ -29,11 +31,22 @@ import app from "../Firebase/firebase.config";
           return signOut(auth)
           }
 
+          // const axiosSecure = useAxios()
+
           useEffect(() => {
              const unSubscribe =  onAuthStateChanged(auth,currentUser => {
                     console.log('objerving', currentUser);
+                    const userEmail = currentUser?.email ;
+                    const loggedUser = { email: userEmail };
                setusr(currentUser)
                     setSpinner(false)
+                    
+                  if (currentUser) {
+                    axios.post('/jwt',loggedUser)
+              .then(res => {
+                console.log(res.data);
+              })
+                  }  
                })
                return () => {
                     unSubscribe()

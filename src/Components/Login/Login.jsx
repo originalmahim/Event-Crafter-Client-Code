@@ -38,7 +38,8 @@ const Login = () => {
             setSuccess('')
             setError('')
             Login(email,password)
-            .then(result => {
+            .then(() => {
+              
               Swal.fire(
                 'Loged In',
                 'You have loged in successfully',

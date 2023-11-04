@@ -30,11 +30,15 @@ const Cart = () => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/cart/${user.email}/${_id}`)
         .then(() => {
+          const newCart = products.filter(product => product._id !== _id)
+          setProducts(newCart)
+
           Swal.fire(
             'Deleted!',
             'Your file has been deleted.',
             'success'
           )
+
         })
         
       }
