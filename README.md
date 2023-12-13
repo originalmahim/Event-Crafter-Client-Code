@@ -42,15 +42,4 @@
 
 11. **Feedback and Testimonials:**
     - Collect and display customer feedback and testimonials to build trust.
-# Question Answers ---
-1. Answer: B: ReferenceError: greetign is not defined
-   Explanation: variable "greetign" is declared, but it is not spelled correctly. It should be greeting. but consoled  "greetign" is not defined. so ist giving ReferenceError.
-2. Answer: D: 3
-   Explanation: JavaScript convert  string  to a number when performing addition, so 1 + 2 equals 3.
-3. Answer: A: ['🍕', '🍫', '🥑', '🍔']
-   Explanation: consol loged food. so the return result is ['🍕', '🍫', '🥑', '🍔']. 
-4. Answer: B: Hi there, undefined
-   Explanation: sayHi function wants an argument "name" to  pass when it will be called. but , you are calling it without any arguments, so "name" is undefined.
-5. Answer: B: 2
-   Explanation: forEach  make a loop over the nums array and increment the count variable by 1 for each truthy value in the array. JavaScript, 0 is considered falsy, and all other numbers are truthy.  So, the count is incremented twice for the numbers 1 and 2, finally the value of 2.
 
